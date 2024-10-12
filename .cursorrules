@@ -1,0 +1,133 @@
+# Next.js TypeScript Project Rules for Vercel Deployment
+
+# File Structure
+- Use App Router structure (app/ directory)
+- Place components in components/ directory
+- Place API routes in app/api/ directory
+- Use server/ directory for server-side code
+
+# TypeScript
+- Use TypeScript for all files (.ts, .tsx)
+- Define proper types for props, state, and function parameters
+- Use interface for object shapes, type for unions/intersections
+- Avoid using 'any' type, use 'unknown' if type is truly unknown
+- Utilize TypeScript's strict mode for enhanced type checking
+
+# Next.js
+- Use server components by default for improved performance
+- Add "use client" directive only when necessary for client-side interactivity
+- Utilize Next.js built-in components (e.g., Link, Image) for optimized performance
+- Implement proper error boundaries and loading states
+- Use Next.js 13+ features like streaming and suspense for enhanced UX
+
+# Vercel Deployment
+- Optimize for Vercel deployment by following Vercel's best practices
+- Utilize Vercel's Edge Functions for API routes when appropriate
+- Implement Vercel's preview deployments for pull requests
+
+# Styling
+- Use Tailwind CSS for styling
+- Customize colors and themes in tailwind.config.ts
+- Use shadcn/ui components for consistent UI elements
+- Follow shadcn/ui best practices for component customization and theming
+
+# State Management
+- Use React hooks for local state management
+- Consider using Zustand or Jotai for global state when necessary
+
+# Authentication
+- Implement Clerk for authentication
+- Use Clerk's useUser() hook for client-side auth state
+- Use auth() function for server-side authentication checks
+- Implement proper role-based access control using Clerk's features
+- Use Clerk's withClerkMiddleware for protecting API routes
+
+# Database
+- Use Drizzle ORM for database operations
+- Define database schema in server/db/schema.ts
+- Use Drizzle's migrations for database schema changes
+- Implement proper error handling for database operations
+- Use Drizzle's query builder for complex queries
+
+# API
+- Implement API routes in app/api/ directory
+- Use NextResponse for API responses
+- Implement proper error handling and status codes
+- Use Vercel's Edge Functions for API routes when appropriate
+
+# AI Integration
+- Use Vercel AI SDK exclusively for AI-related functionalities
+- Implement chat functionalities using the useChat hook from Vercel AI SDK
+- Utilize Vercel AI SDK's streaming capabilities for real-time AI responses
+
+# Performance
+- Implement proper loading and error states for asynchronous operations
+- Use Next.js Image component for optimized image loading
+- Implement code splitting and lazy loading where appropriate
+- Utilize Next.js' built-in performance optimization features
+
+# Security
+- Use environment variables for sensitive information and API keys
+- Implement proper input validation and sanitization
+- Use Clerk's CSRF protection features
+
+# Testing
+- Use Playwright for end-to-end, integration, and unit testing
+- Write unit tests for utility functions and components using Playwright Test
+- Implement integration tests for API routes and pages with Playwright
+- Utilize Playwright's browser automation for comprehensive end-to-end testing
+- Leverage Playwright's built-in assertions and expect library for test assertions
+- Implement visual regression testing using Playwright's screenshot comparison features
+- Use Playwright's network interception capabilities for mocking API responses in tests
+
+# Code Style
+- Use PascalCase for component names
+- Use camelCase for functions and variables
+- Follow ESLint and Prettier configurations for consistent code style
+
+# Documentation
+- Add JSDoc comments for functions and components
+- Keep README.md updated with project setup and run instructions
+
+# Accessibility
+- Ensure proper semantic HTML usage
+- Implement proper ARIA attributes where necessary
+- Ensure keyboard navigation support
+- Follow WCAG 2.1 guidelines for accessibility
+
+# Responsive Design
+- Implement responsive design using Tailwind CSS classes
+- Test on various screen sizes and devices
+
+# Error Handling
+- Implement proper error logging
+- Use toast notifications from shadcn/ui for user-facing errors
+
+# PDF Generation
+- Use jsPDF library for PDF generation
+- Implement proper error handling for PDF generation process
+
+# Git
+- Use meaningful commit messages
+- Create feature branches for new features or bug fixes
+- Regularly pull from main branch to stay updated
+
+# Environment
+- Use .env.local for local environment variables
+- Do not commit .env files to version control
+- Use Vercel's environment variables for production deployments
+
+# Dependencies
+- Regularly update dependencies to their latest stable versions
+- Be cautious when adding new dependencies, prefer built-in Next.js features when possible
+
+# Performance Monitoring
+- Implement Vercel Analytics for performance monitoring
+- Regularly review and optimize based on performance metrics from Vercel's dashboard
+
+# shadcn/ui Best Practices
+- Use shadcn/ui components as building blocks for UI
+- Customize components using the provided configuration options
+- Utilize the theming system for consistent styling across the application
+- Implement proper form handling using shadcn/ui form components
+- Use shadcn/ui's dialog and modal components for improved accessibility
