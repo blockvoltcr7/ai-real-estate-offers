@@ -131,3 +131,54 @@
 - Utilize the theming system for consistent styling across the application
 - Implement proper form handling using shadcn/ui form components
 - Use shadcn/ui's dialog and modal components for improved accessibility
+
+# React Hooks
+- Use useState for local state management:
+  - Initialize state with appropriate default values
+  - Use functional updates for state that depends on previous state
+  - Avoid redundant state by deriving values when possible
+  - Use the lazy initial state for expensive computations
+- Utilize useEffect for side effects:
+  - Separate concerns by using multiple useEffect hooks for different functionalities
+  - Always return a cleanup function to prevent memory leaks, especially for subscriptions or timers
+  - Use the dependency array to control when the effect runs:
+    - Include all variables and functions the effect depends on
+    - Use [] only when the effect should run once on mount and cleanup on unmount
+    - Avoid [] when the effect uses values that might change
+  - Use the optional cleanup function to handle unsubscriptions or cancellations
+- Optimize performance:
+  - Use useMemo for expensive computations
+  - Use useCallback for functions passed as props to child components
+  - Consider using useReducer for complex state logic
+  - Utilize useRef for mutable values that don't require re-renders
+- Utilize custom hooks for reusable logic:
+  - Extract common stateful logic into custom hooks
+  - Follow the "use" naming convention for custom hooks
+- Implement context effectively:
+  - Use useContext for accessing shared data across components
+  - Create custom provider components for complex shared state
+- Handle asynchronous operations:
+  - Use useEffect for data fetching and subscriptions
+  - Consider using libraries like SWR or React Query for advanced data fetching
+- Avoid common pitfalls:
+  - Don't call hooks inside loops, conditions, or nested functions
+  - Ensure the order and number of hooks are consistent between renders
+  - Use the eslint-plugin-react-hooks to catch mistakes
+  - Be cautious with closures in hooks, especially in useEffect and useCallback
+- Testing hooks:
+  - Use React Testing Library for testing custom hooks
+  - Create test components to simulate hook usage in tests
+
+
+# Callbacks
+- Use callbacks effectively:
+  - Implement useCallback for functions passed as props to child components
+  - Memoize callback functions to prevent unnecessary re-renders
+  - Ensure the dependency array of useCallback includes all variables the callback depends on
+  - Use callbacks for event handlers and functions passed to child components
+  - Avoid creating new function instances on every render when possible
+  - Consider using useCallback in conjunction with useMemo for optimized performance
+  - Be cautious of stale closures when using callbacks, especially in useEffect
+  - Use the functional form of setState when the new state depends on the previous state
+  - Implement proper error handling within callbacks
+  - Test callbacks thoroughly, including edge cases and error scenarios
